@@ -57,16 +57,18 @@ const playRound = (playerSelection, computerSelection) => {
 
 
 function callPlayRound(e) {
-    console.log(playRound(e.target.classList.value, getComputerChoice()));
+    playRound(e.target.classList.value, getComputerChoice());
+    const playerCounter = document.querySelector('.playerCounter')
+    const computerCounter = document.querySelector('.computerCounter')
+    playerCounter.textContent = playerScore;
+    computerCounter.textContent = computerScore;
 }
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', callPlayRound));
 
 const winner = () => {
-    if (playerScore === computerScore) {
-        return "This match is a tie!"
-    }
+    if (playerScore < 5 || computerScore < 5) return;
     else if (playerScore > computerScore) {
         return "You won the match!"
     }
