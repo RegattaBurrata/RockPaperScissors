@@ -2,6 +2,7 @@
 // randomly return rock paper or scissors
 // generate a random number between 0 and 1
 // if number if less than .3, return "rock", etc etc
+
 const getComputerChoice = () => {
     const randomNum = Math.random();
     if (randomNum <= .33) {
@@ -55,14 +56,12 @@ const playRound = (playerSelection, computerSelection) => {
 }
 
 
-const game = () => {
-    for (let i = 0; i < 5; i++) {
-        const playerChoice = prompt("Enter rock paper or scissors").toLowerCase();
-        console.log(playRound(playerChoice, getComputerChoice()));
-    }
+function callPlayRound(e) {
+    console.log(playRound(e.target.classList.value, getComputerChoice()));
 }
 
-game();
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', callPlayRound));
 
 const winner = () => {
     if (playerScore === computerScore) {
