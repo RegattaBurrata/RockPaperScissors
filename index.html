@@ -5,26 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
 </head>
 <body>
-    <div class="buttonsContainer">
+    <div class="container">
         <div class="button">
             <button class="rock">Rock</button>
             <button class="paper">Paper</button>
             <button class="scissors">Scissors</button>
         </div>
-    </div>
-    <div class="displayContainer">
-        <div class="display">
-            <div class="counterBox">
-                <div class="playerCounter"></div> 
+        <div class="displayContainer">
+            <div class="display">
+                <div class="counterBox">
+                    <div class="playerCounter"></div> 
+                    <label for="playerCounter" class="label">You</label>
+                </div>
+                <div class="counterBox">
+                    <div class="computerCounter"></div>
+                    <label for="computerCounter" class="label">Computer</label>
+                </div>
             </div>
-            <div class="counterBox">
-                <div class="computerCounter"></div>
-            </div>
-            <div class="message"></div>
+            <div class="message"></div>    
         </div>
     </div>
+    
 </body>
 </html>

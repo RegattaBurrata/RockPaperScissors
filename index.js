@@ -54,26 +54,42 @@ const playRound = (playerSelection, computerSelection) => {
         }
     }
 }
-
-const winner = () => {
-    const message = document.querySelector('.message')
-    if (playerScore < 5 && computerScore < 5) return;
-    else if (playerScore > computerScore) {
-        message.textContent = 'You won the match!'
-    }
-    else {
-        message.textContent = 'You lost this match :('
-        return "You lost this match :("
-    }
-}
-
-function callPlayRound(e) {
-    playRound(e.target.classList.value, getComputerChoice());
+function updateScore() {
     const playerCounter = document.querySelector('.playerCounter')
     const computerCounter = document.querySelector('.computerCounter')
     playerCounter.textContent = playerScore;
     computerCounter.textContent = computerScore;
-    winner();
+}
+
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    updateScore();
+}
+
+const winner = (roundWinner) => {
+    const message = document.querySelector('.message')
+    if (playerScore < 5 && computerScore < 5 && roundWinner) {
+        message.textContent = `${roundWinner}`;
+    }
+    else if (playerScore > computerScore) {
+        message.textContent = 'You won the match!'
+        resetGame();
+    }
+    else if (computerScore > playerScore) {
+        message.textContent = 'You lost this match :('
+        return "You lost this match :("
+        resetGame();
+    }
+    else {
+        message.textContent = '';
+    }
+}
+
+function callPlayRound(e) {
+    const roundWinner = playRound(e.target.classList.value, getComputerChoice());
+    updateScore();
+    winner(roundWinner);
 }
 
 const buttons = document.querySelectorAll('button');
@@ -81,6 +97,6 @@ buttons.forEach(button => button.addEventListener('click', callPlayRound));
 
 
 winner();
-console.log("Player:" + playerScore);
-console.log("Computer:" + computerScore);
-console.log(winner());
+// console.log("Player:" + playerScore);
+// console.log("Computer:" + computerScore);
+// console.log(winner());

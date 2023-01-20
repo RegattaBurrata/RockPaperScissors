@@ -1,0 +1,76 @@
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    flex: 1;
+}
+
+button {
+    padding: 2rem;
+    border-radius: .3rem;
+    color: white;
+    width: 10rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button > .rock {
+    background: blue;
+}
+.button > .paper {
+    background: green;
+}
+.button > .scissors {
+    background: red;
+}
+
+.displayContainer {
+    flex: 1;
+}
+
+.display {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.counterBox {
+    border: .2rem solid black;
+    padding: 1rem;
+    width: 5rem;
+    height: 10rem;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.playerCounter, .computerCounter {
+    flex: 4;
+    font-size: 6rem;
+}
+
+.label {
+    flex: 1;
+}
+
+.message {
+    text-align: center;
+    font-size: 2rem;
+}
