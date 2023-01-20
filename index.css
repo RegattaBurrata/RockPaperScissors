@@ -1,5 +1,7 @@
 body {
     font-family: sans-serif;
+    background: rgb(15, 14, 14);
+    color: white;
 }
 
 .container {
@@ -51,7 +53,7 @@ button {
 }
 
 .counterBox {
-    border: .2rem solid black;
+    border: .2rem solid rgb(237, 237, 237);
     padding: 1rem;
     width: 5rem;
     height: 10rem;

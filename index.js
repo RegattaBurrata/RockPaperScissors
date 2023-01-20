@@ -77,8 +77,7 @@ const winner = (roundWinner) => {
         resetGame();
     }
     else if (computerScore > playerScore) {
-        message.textContent = 'You lost this match :('
-        return "You lost this match :("
+        message.textContent = 'You lost this match :(';
         resetGame();
     }
     else {
